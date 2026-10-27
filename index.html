@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030708">
+<meta name="description" content="Peter Cyber Expert — Cybersecurity, ethical hacking, and digital defense.">
+<title>Peter Cyber Expert | Cybersecurity Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #030708;
+    --panel: #081414;
+    --green: #00ffa3;
+    --blue: #00c8ff;
+    --text: #eafff7;
+    --muted: #91aaa5;
+    --border: rgba(0,255,163,.22);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 15% 15%, #00ffa315, transparent 30%),
+        radial-gradient(circle at 85% 45%, #00c8ff12, transparent 35%);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#matrix {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: .19;
+    pointer-events: none;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(3,7,8,.91);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: .8rem;
+    color: #bdd0ca;
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.nav-links .contact-link {
+    padding: 11px 16px;
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+#menuBtn {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--green);
+    padding: 9px 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 85px 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    color: var(--green);
+    font-family: 'Orbitron', sans-serif;
+    font-size: .62rem;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 15px var(--green);
+    animation: blink 1.3s infinite;
+}
+
+.eyebrow {
+    color: var(--green);
+    font: 600 .75rem 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font: 900 clamp(2.8rem, 6vw, 5.5rem)/1.08 'Orbitron', sans-serif;
+    letter-spacing: -3px;
+    margin: 20px 0;
+}
+
+.outline-text {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--green);
+}
+
+.expert-text {
+    display: block;
+    color: var(--green);
+    font-size: .58em;
+    letter-spacing: 7px;
+    margin-top: 15px;
+}
+
+.intro {
+    max-width: 540px;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: .95rem;
+    margin: 25px 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border: 1px solid var(--green);
+    font-weight: 700;
+    font-size: .78rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--green);
+    color: #00140b;
+}
+
+.btn-secondary {
+    color: var(--green);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 28px #00ffa344;
+}
+
+.tags {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    color: #b4ccc2;
+    font-size: .72rem;
+}
+
+.tags span::before {
+    content: "▹ ";
+    color: var(--green);
+}
+
+/* PROFILE PICTURE */
+
+.profile-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    padding: 13px;
+    background: linear-gradient(140deg, #00ffa31c, #00c8ff0b);
+    border: 1px solid #00ffa366;
+    box-shadow: 0 0 60px #00ffa318;
+    isolation: isolate;
+}
+
+.profile-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border: 1px solid #00c8ff55;
+    transform: rotate(2deg);
+    z-index: -1;
+}
+
+.profile-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        #00ffa322,
+        transparent 35%,
+        transparent 70%,
+        #00c8ff22
+    );
+}
+
+.profile-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid #00c8ff66;
+}
+
+.profile-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 15px 4px 4px;
+    font: 600 .62rem 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    color: var(--green);
+}
+
+.profile-caption span:last-child {
+    color: var(--muted);
+}
+
+.profile-status {
+    position: absolute;
+    right: -20px;
+    bottom: 65px;
+    width: 225px;
+    padding: 16px;
+    background: rgba(3,16,15,.96);
+    border: 1px solid #00ffa366;
+    box-shadow: 0 10px 40px #000a;
+    font: 600 .7rem monospace;
+    color: var(--green);
+    z-index: 2;
+}
+
+.profile-status small {
+    display: block;
+    color: #a6c4b9;
+    line-height: 1.9;
+    margin-top: 8px;
+}
+
+/* SECTIONS */
+
+section.content-section {
+    padding: 95px 0;
+    scroll-margin-top: 75px;
+}
+
+.section-label {
+    color: var(--green);
+    font: 600 .7rem 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+}
+
+.section-title {
+    font: 800 clamp(2rem, 4vw, 3rem) 'Orbitron', sans-serif;
+    margin-top: 15px;
+}
+
+.green {
+    color: var(--green);
+}
+
+.section-description {
+    max-width: 680px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-top: 16px;
+    font-size: .9rem;
+}
+
+.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 38px;
+}
+
+.card {
+    background: linear-gradient(145deg, #0a1919, #040a0b);
+    border: 1px solid var(--border);
+    padding: 28px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00ffa399;
+    box-shadow: 0 12px 35px #00ffa30b;
+}
+
+.card h3 {
+    font: 700 .95rem 'Orbitron', sans-serif;
+    margin-bottom: 16px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: .86rem;
+    line-height: 1.9;
+}
+
+.card ul {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.card li {
+    padding: 11px 0;
+    border-bottom: 1px solid #ffffff0d;
+    font-size: .83rem;
+    color: #c5dbd2;
+}
+
+.card li::before {
+    content: "[+] ";
+    color: var(--green);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 38px;
+}
+
+.skill-icon {
+    font-size: 1.8rem;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.skill-tag {
+    display: inline-block;
+    border: 1px solid var(--border);
+    padding: 7px 9px;
+    color: var(--green);
+    font: 600 .57rem 'Orbitron', sans-serif;
+    margin-top: 18px;
+}
+
+.project-number {
+    font: 900 2.6rem 'Orbitron', sans-serif;
+    color: #00ffa344;
+    margin-bottom: 16px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 38px;
+}
+
+.quote {
+    text-align: center;
+    border: 1px solid var(--border);
+    padding: 45px 25px;
+    background: linear-gradient(120deg, #00ffa30d, #00c8ff0b);
+}
+
+.quote h2 {
+    font: 800 clamp(1.2rem, 3vw, 2rem)/1.6 'Orbitron', sans-serif;
+    margin-top: 20px;
+}
+
+.quote p {
+    color: var(--muted);
+    margin-top: 18px;
+    font-size: .8rem;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 22px;
+    margin-top: 38px;
+}
+
+.contact-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #ffffff10;
+}
+
+.contact-item small {
+    display: block;
+    color: var(--green);
+    font-size: .68rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.contact-item a {
+    font-size: .85rem;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: var(--blue);
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.field label {
+    display: block;
+    color: var(--muted);
+    font-size: .78rem;
+    margin-bottom: 8px;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 14px;
+    background: #020708;
+    border: 1px solid var(--border);
+    color: white;
+    font: inherit;
+    outline: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--green);
+}
+
+.field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+.form-note {
+    color: var(--muted);
+    font-size: .7rem;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.footer-inner p {
+    color: var(--muted);
+    font-size: .72rem;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes blink {
+    50% { opacity: .3; }
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 15px #00ffa322; }
+    50% { box-shadow: 0 0 35px #00ffa355; }
+}
+
+.profile-wrapper {
+    animation: pulse 4s infinite;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .intro {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons,
+    .tags {
+        justify-content: center;
+    }
+
+    .profile-wrapper {
+        width: min(100%, 500px);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    #menuBtn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: #030708;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .nav-links .contact-link {
+        text-align: center;
+    }
+
+    .grid-two,
+    .skills-grid,
+    .projects-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section.content-section {
+        padding: 70px 0;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .profile-status {
+        right: 8px;
+        bottom: 55px;
+        width: 205px;
+        font-size: .62rem;
+    }
+
+    .profile-caption {
+        font-size: .55rem;
+        letter-spacing: .5px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix" aria-hidden="true"></canvas>
+
+<header>
+    <nav class="container">
+        <a class="logo" href="#home">PETER<span>.CYBER</span></a>
+
+        <button id="menuBtn" aria-label="Toggle navigation"
+                aria-expanded="false">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="contact-link">CONTACT ↗</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+    <div class="container hero-grid">
+
+        <div class="hero-copy reveal">
+            <div class="status">
+                <span class="status-dot"></span>
+                DIGITAL DEFENSE SYSTEM ONLINE
+            </div>
+
+            <p class="eyebrow">HELLO, WORLD. I'M</p>
+
+            <h1>
+                PETER
+                <span class="outline-text">CYBER</span>
+                <span class="expert-text">SECURITY EXPERT_</span>
+            </h1>
+
+            <p class="intro">
+                Passionate about cybersecurity, digital defense, ethical
+                security testing, and protecting the digital world.
+                Exploring threats, strengthening systems, and learning
+                something new every day.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    EXPLORE MY WORK ↗
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    CONTACT ME
+                </a>
+            </div>
+
+            <div class="tags">
+                <span>Cybersecurity</span>
+                <span>Digital Defense</span>
+                <span>Ethical Security</span>
+            </div>
+        </div>
+
+        <!-- YOUR PROFILE PHOTO -->
+        <div class="reveal">
+            <div class="profile-wrapper">
+
+                <img
+                    src="peter-profile.jpeg"
+                    alt="Peter Cyber Expert profile picture"
+                    class="profile-image"
+                >
+
+                <div class="profile-caption">
+                    <span>IDENTITY: PETER</span>
+                    <span>DEFENSE MODE: ON</span>
+                </div>
+
+                <div class="profile-status">
+                    &gt; system.status()
+
+                    <small>
+                        IDENTITY: PETER CYBER EXPERT<br>
+                        SECURITY: ACTIVE<br>
+                        MODE: DEFENSIVE<br>
+                        MISSION: PROTECT / DETECT / RESPOND
+                    </small>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="content-section" id="about">
+    <div class="container">
+
+        <p class="section-label">01 / THE PERSON BEHIND THE SCREEN</p>
+        <h2 class="section-title">ABOUT <span class="green">ME.</span></h2>
+
+        <p class="section-description">
+            Technology evolves. Threats evolve. Knowledge, responsibility,
+            and continuous learning are essential to staying prepared.
+        </p>
+
+        <div class="grid-two">
+
+            <article class="card reveal">
+                <h3><span class="green">//</span> My Mission</h3>
+
+                <p>
+                    I'm Peter Cyber Expert, passionate about cybersecurity,
+                    digital safety, and understanding how systems can be
+                    protected against online threats.
+                </p>
+
+                <br>
+
+                <p>
+                    My goal is to develop practical skills, build useful
+                    security projects, and promote responsible technology use.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <h3><span class="green">//</span> My Principles</h3>
+
+                <ul>
+                    <li>Ethics before exploitation</li>
+                    <li>Permission before security testing</li>
+                    <li>Privacy and data protection</li>
+                    <li>Responsible vulnerability reporting</li>
+                    <li>Continuous learning and improvement</li>
+                </ul>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="content-section" id="skills">
+    <div class="container">
+
+        <p class="section-label">02 / TECHNICAL ARSENAL</p>
+        <h2 class="section-title">MY <span class="green">SKILLS.</span></h2>
+
+        <p class="section-description">
+            Areas of cybersecurity that can be developed, demonstrated,
+            and documented through practical work.
+        </p>
+
+        <div class="skills-grid">
+
+            <article class="card reveal">
+                <div class="skill-icon">⌘</div>
+                <h3>Ethical Hacking</h3>
+                <p>
+                    Authorized security testing, vulnerability discovery,
+                    and responsible reporting.
+                </p>
+                <span class="skill-tag">OFFENSIVE SECURITY</span>
+            </article>
+
+            <article class="card reveal">
+                <div class="skill-icon">▤</div>
+                <h3>Network Security</h3>
+                <p>
+                    Network fundamentals, traffic analysis, firewalls,
+                    and defensive monitoring.
+                </p>
+                <span class="skill-tag">NETWORK DEFENSE</span>
+            </article>
+
+            <article class="card reveal">
+                <div class="skill-icon">⌬</div>
+                <h3>Web Security</h3>
+                <p>
+                    Web application risks, authentication, access controls,
+                    and security best practices.
+                </p>
+                <span class="skill-tag">APPLICATION SECURITY</span>
+            </article>
+
+            <article class="card reveal">
+                <div class="skill-icon">◈</div>
+                <h3>Threat Intelligence</h3>
+                <p>
+                    Threat research, suspicious indicators, and
+                    understanding attacker behavior.
+                </p>
+                <span class="skill-tag">THREAT RESEARCH</span>
+            </article>
+
+            <article class="card reveal">
+                <div class="skill-icon">⌁</div>
+                <h3>Linux & Scripting</h3>
+                <p>
+                    Command-line tools and automation for legitimate
+                    security and defensive tasks.
+                </p>
+                <span class="skill-tag">TOOLS & AUTOMATION</span>
+            </article>
+
+            <article class="card reveal">
+                <div class="skill-icon">⛨</div>
+                <h3>Digital Forensics</h3>
+                <p>
+                    Evidence handling, incident investigation concepts,
+                    and digital analysis.
+                </p>
+                <span class="skill-tag">INVESTIGATION</span>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="content-section" id="projects">
+    <div class="container">
+
+        <p class="section-label">03 / PROOF OF WORK</p>
+        <h2 class="section-title">FEATURED <span class="green">PROJECTS.</span></h2>
+
+        <p class="section-description">
+            Practical projects are a great way to demonstrate your
+            cybersecurity knowledge. Replace these examples with your
+            actual projects as you complete them.
+        </p>
+
+        <div class="projects-grid">
+
+            <article class="card reveal">
+                <div class="project-number">01</div>
+                <h3>Cybersecurity Lab</h3>
+                <p>
+                    A controlled practice environment for learning network
+                    monitoring, system hardening, and security testing.
+                </p>
+                <span class="skill-tag">LAB ENVIRONMENT</span>
+            </article>
+
+            <article class="card reveal">
+                <div class="project-number">02</div>
+                <h3>Web Security Assessment</h3>
+                <p>
+                    A documented assessment of an authorized test application,
+                    including findings and remediation recommendations.
+                </p>
+                <span class="skill-tag">WEB SECURITY</span>
+            </article>
+
+            <article class="card reveal">
+                <div class="project-number">03</div>
+                <h3>Defensive Automation</h3>
+                <p>
+                    A script that automates a legitimate defensive task,
+                    with documentation explaining its purpose and results.
+                </p>
+                <span class="skill-tag">SCRIPTING</span>
+            </article>
+
+            <article class="card reveal">
+                <div class="project-number">04</div>
+                <h3>Incident Response Plan</h3>
+                <p>
+                    A response playbook covering detection, investigation,
+                    containment, recovery, and lessons learned.
+                </p>
+                <span class="skill-tag">BLUE TEAM</span>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- MOTTO -->
+
+<section class="content-section">
+    <div class="container">
+        <div class="quote reveal">
+            <p class="section-label">THE PETER CYBER EXPERT MINDSET</p>
+
+            <h2>
+                DON'T JUST LEARN HOW SYSTEMS BREAK.<br>
+                <span class="green">LEARN HOW TO MAKE THEM STRONGER.</span>
+            </h2>
+
+            <p>ETHICS · SECURITY · INNOVATION</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="content-section" id="contact">
+    <div class="container">
+
+        <p class="section-label">04 / OPEN A CONNECTION</p>
+        <h2 class="section-title">LET'S <span class="green">CONNECT.</span></h2>
+
+        <p class="section-description">
+            Have a cybersecurity question, collaboration idea,
+            or professional opportunity? Reach out.
+        </p>
+
+        <div class="contact-grid">
+
+            <div class="card reveal">
+                <h3><span class="green">//</span> Contact Details</h3>
+
+                <p style="margin-top:12px">
+                    Choose your preferred channel to get in touch.
+                </p>
+
+                <div class="contact-item">
+                    <small>EMAIL</small>
+                    <a href="mailto:petercyberexpert@gmail.com">
+                        petercyberexpert@gmail.com ↗
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <small>WHATSAPP / PHONE</small>
+                    <a href="https://wa.me/2348163716089"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        +234 816 371 6089 ↗
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <small>TIKTOK</small>
+                    <a href="https://www.tiktok.com/@petercyberexpert"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        @petercyberexpert ↗
+                    </a>
+                </div>
+            </div>
+
+            <form class="card contact-form reveal" id="contactForm">
+                <h3><span class="green">//</span> Send Me a Message</h3>
+
+                <div class="field">
+                    <label for="name">Your name</label>
+                    <input id="name" type="text"
+                           placeholder="Enter your name" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Your email</label>
+                    <input id="email" type="email"
+                           placeholder="you@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="message">Your message</label>
+                    <textarea id="message"
+                              placeholder="Write your message..."
+                              required></textarea>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    PREPARE EMAIL ↗
+                </button>
+
+                <p class="form-note">
+                    This form opens your email application with your
+                    message prepared. Direct online submissions require
+                    a form service or server.
+                </p>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <a class="logo" href="#home">PETER<span>.CYBER</span></a>
+
+        <p>
+            © <span id="year"></span>
+            PETER CYBER EXPERT
+        </p>
+
+        <p>ETHICS · SECURITY · INNOVATION</p>
+    </div>
+</footer>
+
+<script>
+// MOBILE NAVIGATION
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+    });
+});
+
+// CURRENT YEAR
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// SCROLL REVEAL ANIMATIONS
+const revealItems = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => observer.observe(item));
+} else {
+    revealItems.forEach(item => item.classList.add("visible"));
+}
+
+// MATRIX BACKGROUND
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+const characters = "01ABCDEF<>/{}[]";
+let drops = [];
+let animationId;
+let lastFrame = 0;
+
+function resizeCanvas() {
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+    canvas.width = window.innerWidth * ratio;
+    canvas.height = window.innerHeight * ratio;
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+    const columns = Math.ceil(window.innerWidth / 18);
+
+    drops = Array.from(
+        { length: columns },
+        () => Math.random() * -35
+    );
+}
+
+function drawMatrix(timestamp) {
+    animationId = requestAnimationFrame(drawMatrix);
+
+    if (timestamp - lastFrame < 45) return;
+    lastFrame = timestamp;
+
+    ctx.fillStyle = "rgba(3, 7, 8, 0.13)";
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
+    ctx.font = "12px monospace";
+    ctx.fillStyle = "#00ffa3";
+
+    drops.forEach((drop, index) => {
+        const character =
+            characters[Math.floor(Math.random() * characters.length)];
+
+        ctx.fillText(character, index * 18, drop * 18);
+
+        if (
+            drop * 18 > window.innerHeight &&
+            Math.random() > 0.98
+        ) {
+            drops[index] = 0;
+        } else {
+            drops[index] += 1;
+        }
+    });
+}
+
+function startMatrix() {
+    cancelAnimationFrame(animationId);
+
+    if (window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+    }
+
+    resizeCanvas();
+    lastFrame = 0;
+    animationId = requestAnimationFrame(drawMatrix);
+}
+
+window.addEventListener("resize", resizeCanvas);
+startMatrix();
+
+// CONTACT FORM: PREPARE AN EMAIL
+document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const subject = encodeURIComponent(
+        "Portfolio message from " + name
+    );
+
+    const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage:\n" + message
+    );
+
+    window.location.href =
+        "mailto:petercyberexpert@gmail.com?subject=" +
+        subject + "&body=" + body;
+});
+</script>
+
+</body>
+</html>
